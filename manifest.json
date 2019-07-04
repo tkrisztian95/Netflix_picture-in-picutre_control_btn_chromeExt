@@ -1,0 +1,21 @@
+{
+    "manifest_version": 2,
+    "name": "NETFLIX picture-in-picture control button",
+    "author": "Tóth Krisztián Gyula",
+    "version": "0.1.0",
+    "description": "Add picutre-in-picture control button to Netflix",
+    "content_scripts": [
+        {
+            "run_at": "document_end",
+            "css": [
+                "css/style.css"
+            ],
+            "js": [
+                "js/content.js"
+            ],
+            "matches": [
+                "https://www.netflix.com/watch/*"
+            ]
+        }
+    ]
+}
