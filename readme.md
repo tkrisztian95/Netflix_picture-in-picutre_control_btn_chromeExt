@@ -1,11 +1,11 @@
-# Picture-in-picture control button on Netflix movie player next to the full screen buttin
+# Picture-in-picture control button on Netflix movie player next to the full screen button
 The extension put a new picture-in-picture control button to the video control bar. On click to this button it opens the video picture in picture mode.
 
 ## Description
 
 ### Screenshots
 
-![Screenshot](resources/capture.PNG)
+![Screenshot](resources/Capture.PNG)
 
 ### How it works:
 
