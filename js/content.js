@@ -88,8 +88,13 @@ chrome.runtime.onMessage.addListener(
     function (request, sender, sendResponse) {
         // listen for messages sent from background.js
         if (request.message === 'url_changed!') {
-            document.exitPictureInPicture();
-            addTogglePipBtn();
+            try {
+                document.exitPictureInPicture();
+            } catch (error) {
+                console.log(`Error! ${error}`);
+            } finally {
+                addTogglePipBtn();
+            }
         }
     });
 
