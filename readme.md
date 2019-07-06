@@ -12,8 +12,7 @@ I decided to make this extension because I missed this control button so much. A
 
 ![Screenshot](resources/capture2.PNG)
 
-Picture-in-picture extension (by Google): https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg
-
+[Picture-in-picture extension (by Google):](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg)
 
 # Tasks & Imporvements
 
