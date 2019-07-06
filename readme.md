@@ -7,6 +7,8 @@ On click it opens the video in a floating window (always on top of other windows
 
 ![Screenrecord](resources/capture.gif)
 
+** Disclaimer ** Netflix is registered trademarks, this extension is not affiliated with Netflix.
+
 ## Description
 I decided to make this extension because I missed this control button so much. After I started the work I had to realize there is a solution already by the Google's official PIP extension. [Picture-in-picture extension (by Google):](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg)
 
