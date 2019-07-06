@@ -10,7 +10,7 @@ On click it opens the video in a floating window (always on top of other windows
 ## Description
 I decided to make this extension because I missed this control button so much. After I started the work I had to realize there is a solution already by the Google's official PIP extension. But! I still wanted that control button to seen on the Netflix's video player control bar so I continued the work.
 
-![Screenshot](resources/capture2.PNG)
+![Screenshot2](resources/capture2.PNG)
 
 [Picture-in-picture extension (by Google):](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg)
 
