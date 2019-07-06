@@ -74,7 +74,7 @@ function addTogglePipBtn() {
 
                 $video.bind('leavepictureinpicture', function (event) {
                     console.log('Netflix watch left PiP');
-                    $togglePipBtn.disabled = false; A
+                    $togglePipBtn.disabled = false;
                 });
 
                 clearInterval(checkBtnControlRowExist);
