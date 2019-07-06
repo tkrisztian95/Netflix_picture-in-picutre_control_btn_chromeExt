@@ -9,6 +9,11 @@
         "16": "icon16.png",
         "48": "icon48.png"
     },
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
     "content_scripts": [
         {
             "run_at": "document_end",
@@ -20,7 +25,8 @@
                 "js/content.js"
             ],
             "matches": [
-                "https://www.netflix.com/watch/*"
+                "http://www.netflix.com/*",
+                "https://www.netflix.com/*"
             ]
         }
     ],

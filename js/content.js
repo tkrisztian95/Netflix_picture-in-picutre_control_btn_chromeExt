@@ -1,6 +1,6 @@
 var $video;
 var $playerControlRow;
-var newTogglePipBtnIconSvg = '<symbol id="pip"' +
+var PIP_BTN_SVG = '<symbol id="pip"' +
     'viewBox="0 0 96 96" style="enable-background:new 0 0 96 96;" xml:space="preserve">' +
     '<style type="text/css">' +
     '.st0{fill:#FFFFFF;}' +
@@ -11,7 +11,7 @@ var newTogglePipBtnIconSvg = '<symbol id="pip"' +
     '</g>' +
     '</symbol>';
 
-var $newTogglePipBtn = $('<button id="custom-pip-btn" ' +
+var $togglePipBtn = $('<button id="custom-pip-btn" ' +
     'class="touchable PlayerControls--control-element ' +
     'nfp-button-control default-control-button " ' +
     'tabindex="0" ' +
@@ -20,18 +20,18 @@ var $newTogglePipBtn = $('<button id="custom-pip-btn" ' +
     '<svg class="svg-icon" focusable="false"><use filter="" xlink:href="#pip"></use></svg>' +
     '</button>');
 
-$newTogglePipBtn.mouseover(async function (event) {
-    $newTogglePipBtn.addClass("PlayerControls--control-element-active");
-    $newTogglePipBtn.attr("style", "transform: scale(1.2);");
+$togglePipBtn.mouseover(async function (event) {
+    $togglePipBtn.addClass("PlayerControls--control-element-active");
+    $togglePipBtn.attr("style", "transform: scale(1.2);");
 });
 
-$newTogglePipBtn.mouseleave(async function (event) {
-    $newTogglePipBtn.removeClass("PlayerControls--control-element-active");
-    $newTogglePipBtn.removeAttr("style");
+$togglePipBtn.mouseleave(async function (event) {
+    $togglePipBtn.removeClass("PlayerControls--control-element-active");
+    $togglePipBtn.removeAttr("style");
 });
 
-$newTogglePipBtn.click(async function (event) {
-    $newTogglePipBtn.disabled = true; //disable toggle button while the event occurs
+$togglePipBtn.click(async function (event) {
+    $togglePipBtn.disabled = true; //disable toggle button while the event occurs
     try {
         // If there is no element in Picture-in-Picture yet, request for it
         if ($video !== document.pictureInPictureElement) {
@@ -45,16 +45,14 @@ $newTogglePipBtn.click(async function (event) {
     } catch (error) {
         console.log(`Error! ${error}`);
     } finally {
-        $newTogglePipBtn.disabled = false; //enable toggle button after the event
+        $togglePipBtn.disabled = false; //enable toggle button after the event
     }
 });
 
-$(document).ready(function () {
-
+function addTogglePipBtn() {
     if ('pictureInPictureEnabled' in document) {
-
         var svgDefs = window.document.querySelector('#appMountPoint > div > div > svg > defs');
-        svgDefs.insertAdjacentHTML('beforeend', newTogglePipBtnIconSvg);
+        svgDefs.insertAdjacentHTML('beforeend', PIP_BTN_SVG);
 
         var startTime = new Date().getTime();
         var checkBtnControlRowExist = setInterval(function () {
@@ -68,28 +66,35 @@ $(document).ready(function () {
             $playerControlRow = $('.PlayerControlsNeo__button-control-row');
             if ($playerControlRow.length && $video.length) {
 
-                $playerControlRow.append($newTogglePipBtn);
+                $playerControlRow.append($togglePipBtn);
 
-                registerVideoPipEventListeners();
+                $video.bind('enterpictureinpicture', function (event) {
+                    console.log('Netflix watch entered PiP');
+                });
+
+                $video.bind('leavepictureinpicture', function (event) {
+                    console.log('Netflix watch left PiP');
+                    $togglePipBtn.disabled = false; A
+                });
 
                 clearInterval(checkBtnControlRowExist);
             }
 
         }, 100); // check every 100ms
     }
-});
-
-function registerVideoPipEventListeners() {
-    $video.bind('enterpictureinpicture', function (event) {
-        console.log('Entered PiP');
-        var pipWindow = event.pictureInPictureWindow;
-        console.log(`Window size -  \n Width: ${pipWindow.width} \n Height: ${pipWindow.height}`); // get the width and height of PiP window
-    });
-
-    $video.bind('leavepictureinpicture', function (event) {
-        console.log('Left PiP');
-        $newTogglePipBtn.disabled = false;
-    });
 }
+
+chrome.runtime.onMessage.addListener(
+    function (request, sender, sendResponse) {
+        // listen for messages sent from background.js
+        if (request.message === 'url_changed!') {
+            document.exitPictureInPicture();
+            addTogglePipBtn();
+        }
+    });
+
+$(document).ready(function () {
+    addTogglePipBtn();
+});
 
 
