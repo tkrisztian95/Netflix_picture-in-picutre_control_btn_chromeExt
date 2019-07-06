@@ -11,11 +11,15 @@
                 "css/style.css"
             ],
             "js": [
+                "js/jquery-3.4.1.min.js",
                 "js/content.js"
             ],
             "matches": [
                 "https://www.netflix.com/watch/*"
             ]
         }
+    ],
+    "permissions": [
+        "tabs"
     ]
 }
