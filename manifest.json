@@ -4,6 +4,11 @@
     "author": "Tóth Krisztián Gyula",
     "version": "0.1.0",
     "description": "Add picutre-in-picture control button to Netflix",
+    "icons": {
+        "128": "icon128.png",
+        "16": "icon16.png",
+        "48": "icon48.png"
+    },
     "content_scripts": [
         {
             "run_at": "document_end",
