@@ -1,5 +1,5 @@
 # Picture-in-picture control button on Netflix movie player next to the full screen button
-This extension put a new picture-in-picture control button to the video control bar. ![Chrome Web Store isntall link](https://chrome.google.com/webstore/detail/netflix-picture-in-pictur/jkmakgpojigahjdalffbkimpnpabelio)
+This extension put a new picture-in-picture control button to the video control bar. [Chrome Web Store install link](https://chrome.google.com/webstore/detail/netflix-picture-in-pictur/jkmakgpojigahjdalffbkimpnpabelio)
 
 ![Screenshot](resources/Capture.PNG)
 
