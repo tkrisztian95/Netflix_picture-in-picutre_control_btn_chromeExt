@@ -9,7 +9,7 @@ On click it opens the video in a floating window (always on top of other windows
 
 ** Disclaimer ** Netflix is registered trademarks, this extension is not affiliated with Netflix.
 
-<a target="_blank" href="https://chrome.google.com/webstore/detail/netflix-picture-in-pictur/jkmakgpojigahjdalffbkimpnpabelio">![Try it now in CWS](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton.png "Click here to install this from the Chrome Web Store")</a>
+<a target="_blank" href="https://chrome.google.com/webstore/detail/jira-gitlab-integration-n/ccoandmmhdbepejjfhlimekeeamdkgkj">![Try it now in CWS](https://raw.github.com/GoogleChrome/chrome-app-samples/master/tryitnowbutton.png "Click here to install this from the Chrome Web Store")</a>
 
 ## Description
 I decided to make this extension because I missed this control button so much. After I started the work I had to realize there is a solution already by the Google's official PIP extension. [Picture-in-picture extension (by Google):](https://chrome.google.com/webstore/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg)
